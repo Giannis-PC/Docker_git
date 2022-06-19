@@ -1,9 +1,10 @@
-# Here we are going to create the docker configuration for wordpress
-
-# We need nginx, php, mysql.
-
-# Use gitignore.io to load the configuration for ignoring git files.
-
-# Download wordpress and mount it.
-
 version: '3.8'
+
+services:
+  nginx:
+    image: nginx:alpine
+    volumes:
+      - ./www:/usr/share/nginx/html
+      #- ./nginx/server.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 8000:80

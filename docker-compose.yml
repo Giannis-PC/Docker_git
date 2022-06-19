@@ -29,6 +29,8 @@ services:
         - MYSQL_ALLOW_EMPTY_PASSWORD=false
       ports:
         - "7000:3306"
+      networks:
+        - server_net
 networks:
   server_net:
 

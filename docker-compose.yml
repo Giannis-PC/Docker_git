@@ -5,7 +5,7 @@ services:
     image: nginx:alpine
     volumes:
       - ./www:/usr/share/nginx/html
-      #- ./nginx/server.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/server.conf:/etc/nginx/conf.d/default.conf
     ports:
       - 8000:80
     networks:
@@ -19,8 +19,6 @@ services:
       - server_net
   db:
       image: mysql:5.7.38
-      networks:
-        - server_net
       volumes:
         - ./db/persist:/var/lib/mysql # when docker-compose down is used and then docker-compose up -d the database will not be affected
       environment:

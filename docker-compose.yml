@@ -23,11 +23,11 @@ services:
       volumes:
         - ./db/persist:/var/lib/mysql # when docker-compose down is used and then docker-compose up -d the database will not be affected
       environment:
-        - MYSQL_DATABASE=wordpressdb
-        - MYSQL_USER=secret
-        - MYSQL_PASSWORD=secret
-        - MYSQL_ROOT_PASSWORD=secret
-        - MYSQL_ALLOW_EMPTY_PASSWORD=false
+        - MYSQL_DATABASE = wordpressdb
+        - MYSQL_USER = secret
+        - MYSQL_PASSWORD = secret
+        - MYSQL_ROOT_PASSWORD = secret
+        - MYSQL_ALLOW_EMPTY_PASSWORD = false
       ports:
         - "7000:3306"
       networks:
